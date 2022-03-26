@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">SuperApp</string>
+    <string name="title_core">core</string>
+    <string name="title_common">common</string>
 </resources>
