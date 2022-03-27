@@ -1,0 +1,20 @@
+import kz.oceandance.buildsrc.dependencies.KotlinDependencies
+import kz.oceandance.buildsrc.dependencies.AndroidDependencies
+
+/**
+ * Shared dependencies between modules
+ */
+dependencies {
+
+    implementation KotlinDependencies.kotlin
+    implementation KotlinDependencies.kotlinCoroutineCore
+    implementation KotlinDependencies.kotlinCoroutineAndroid
+
+    implementation AndroidDependencies.appCompat
+    implementation AndroidDependencies.coreKtx
+    implementation AndroidDependencies.constraintLayout
+    implementation AndroidDependencies.lifecycleViewModel
+    implementation AndroidDependencies.recyclerView
+    implementation AndroidDependencies.navigation
+    implementation AndroidDependencies.navigationFrag
+}

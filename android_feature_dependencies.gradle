@@ -1,0 +1,40 @@
+import kz.oceandance.buildsrc.Modules
+import kz.oceandance.buildsrc.dependencies.TestDependencies
+
+/**
+ * Feature dependencies
+ */
+apply plugin: 'com.android.library'
+apply from: '../../android_core_dependencies.gradle'
+apply from: '../../android_commons.gradle'
+apply plugin: 'kotlin-kapt'
+apply plugin: "androidx.navigation.safeargs.kotlin"
+
+android {
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+}
+
+dependencies {
+    implementation project(Modules.common)
+    implementation project(Modules.navigation)
+
+    // TEST
+    androidTestImplementation TestDependencies.androidTestRunner
+    androidTestImplementation TestDependencies.junit
+    androidTestImplementation TestDependencies.mockkAndroid
+    androidTestImplementation TestDependencies.fragmentNav
+    androidTestImplementation TestDependencies.espresso
+    androidTestImplementation TestDependencies.espressoContrib
+    androidTestImplementation TestDependencies.archCoreTest
+    testImplementation TestDependencies.androidTestRunner
+    testImplementation TestDependencies.junit
+    testImplementation TestDependencies.mockk
+    testImplementation TestDependencies.archCoreTest
+}

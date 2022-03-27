@@ -6,13 +6,7 @@
 
     <fragment
         android:id="@+id/home_fragment"
-        android:name="kz.oceandance.home.HomeFragment">
-
-        <action
-            android:id="@+id/action_home_fragment_to_news_fragment"
-            app:destination="@id/news_fragment" />
-    </fragment>
-
+        android:name="kz.oceandance.home.HomeFragment" />
     <fragment
         android:id="@+id/news_fragment"
         android:name="kz.oceandance.news.NewsFragment" />

@@ -1,9 +1,11 @@
+import kz.oceandance.buildsrc.dependencies.AndroidDependencies
+
 apply plugin: 'com.android.library'
 apply from: '../android_commons.gradle'
 
 dependencies {
 
-    implementation "androidx.navigation:navigation-ui-ktx:2.4.1"
-    implementation "androidx.navigation:navigation-fragment-ktx:2.4.1"
+    implementation AndroidDependencies.navigation
+    implementation AndroidDependencies.navigationFrag
 
 }
