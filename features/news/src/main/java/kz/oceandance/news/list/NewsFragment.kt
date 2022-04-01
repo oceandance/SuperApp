@@ -1,12 +1,15 @@
-package kz.oceandance.news
+package kz.oceandance.news.list
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.FragmentNavigator
+import androidx.navigation.fragment.findNavController
 import kz.oceandance.common.base.BaseFragment
 import kz.oceandance.common.utils.DateHelper
+import kz.oceandance.news.R
 import kz.oceandance.news.databinding.FragmentNewsBinding
 import java.util.*
 
@@ -26,8 +29,9 @@ class NewsFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val calendar = GregorianCalendar.getInstance()
-        val dateHelper = DateHelper.getRelativeDate(calendar.time)
-        binding.currentTimeTextView.text = dateHelper
+        binding.nextButton.setOnClickListener {
+            findNavController().navigate(NewsFragmentDirections.actionNewsFragmentToNewsNavGraph())
+        }
+
     }
 }

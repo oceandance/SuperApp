@@ -13,4 +13,5 @@ object AndroidDependencies {
     const val recyclerView = "androidx.recyclerview:recyclerview:${Versions.recyclerview}"
     const val navigation = "androidx.navigation:navigation-ui-ktx:${Versions.nav}"
     const val navigationFrag = "androidx.navigation:navigation-fragment-ktx:${Versions.nav}"
+    const val navigationFeature = "androidx.navigation:navigation-dynamic-features-fragment:${Versions.nav}"
 }

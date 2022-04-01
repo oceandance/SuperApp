@@ -10,5 +10,4 @@ dependencies {
     implementation AndroidDependencies.navigation
     implementation AndroidDependencies.navigationFrag
 
-    implementation project(":navigation")
 }

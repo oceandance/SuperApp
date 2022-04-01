@@ -1,33 +1,46 @@
 package kz.oceandance.superapp.main
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.NavigationUI
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import androidx.navigation.ui.*
 import kz.oceandance.superapp.R
+import kz.oceandance.superapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
-    private lateinit var bottomNavigationView: BottomNavigationView
+    private lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(LayoutInflater.from(this))
+        setContentView(binding.root)
 
         initNavigation()
+        appBarConfiguration= AppBarConfiguration(navController.graph)
+
+        val toolbar = binding.toolbar
+        setSupportActionBar(toolbar)
+        setupActionBarWithNavController(navController, appBarConfiguration)
+        setupBottomNavMenu()
     }
 
     private fun initNavigation() {
-        bottomNavigationView = findViewById(R.id.bottom_navigation_view)
-
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
+    }
 
-        NavigationUI.setupWithNavController(bottomNavigationView, navController)
+    private fun setupBottomNavMenu(){
+        binding.bottomNavigationView.setupWithNavController(navController)
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        return navController.navigateUp()
     }
 
 }

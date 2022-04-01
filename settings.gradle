@@ -9,6 +9,5 @@ rootProject.name = "SuperApp"
 
 include ':app'
 include ':common'
-include ':navigation'
 include ':features:home'
 include ':features:news'

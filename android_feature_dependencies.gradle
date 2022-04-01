@@ -23,7 +23,6 @@ android {
 
 dependencies {
     implementation project(Modules.common)
-    implementation project(Modules.navigation)
 
     // TEST
     androidTestImplementation TestDependencies.androidTestRunner
