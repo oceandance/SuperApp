@@ -4,12 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import kz.oceandance.news.R
-import kz.oceandance.news.databinding.FragmentNewsBinding
+import kz.oceandance.common.base.BaseFragment
 import kz.oceandance.news.databinding.FragmentNewsDetailBinding
 
-class NewsDetailFragment: Fragment(R.layout.fragment_news_detail) {
+class NewsDetailFragment : BaseFragment() {
 
     private lateinit var binding: FragmentNewsDetailBinding
 
@@ -21,4 +19,6 @@ class NewsDetailFragment: Fragment(R.layout.fragment_news_detail) {
         binding = FragmentNewsDetailBinding.inflate(inflater, container, false);
         return binding.root
     }
+
+
 }

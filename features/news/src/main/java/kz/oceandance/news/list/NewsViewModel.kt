@@ -1,4 +1,6 @@
 package kz.oceandance.news.list
 
-class NewsViewModel {
+import kz.oceandance.common.base.BaseViewModel
+
+class NewsViewModel: BaseViewModel() {
 }

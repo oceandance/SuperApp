@@ -1,5 +1,6 @@
 import kz.oceandance.buildsrc.dependencies.KotlinDependencies
 import kz.oceandance.buildsrc.dependencies.AndroidDependencies
+import kz.oceandance.buildsrc.dependencies.KoinDependencies
 
 /**
  * Shared dependencies between modules
@@ -17,4 +18,6 @@ dependencies {
     implementation AndroidDependencies.recyclerView
     implementation AndroidDependencies.navigation
     implementation AndroidDependencies.navigationFrag
+
+    implementation KoinDependencies.koin
 }

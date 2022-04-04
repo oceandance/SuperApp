@@ -14,16 +14,16 @@ abstract class BaseFragment: Fragment() {
      * Observe a [NavigationCommand] [Event] [LiveData].
      * When this [LiveData] is updated, [Fragment] will navigate to its destination
      */
-//    private fun observeNavigation(viewModel: BaseViewModel) {
-//        viewModel.navigation.observe(viewLifecycleOwner, Observer {
-//            it?.getContentIfNotHandled()?.let { command ->
-////                when (command) {
-////                    is NavigationCommand.To -> findNavController().navigate(command.directions, getExtras())
-////                    is NavigationCommand.Back -> findNavController().navigateUp()
-////                }
-//            }
-//        })
-//    }
+    fun observeNavigation(viewModel: BaseViewModel) {
+        viewModel.navigation.observe(viewLifecycleOwner, Observer {
+            it?.getContentIfNotHandled()?.let { command ->
+                when (command) {
+                    is NavigationCommand.To -> findNavController().navigate(command.directions, getExtras())
+                    is NavigationCommand.Back -> findNavController().navigateUp()
+                }
+            }
+        })
+    }
 
     /**
      * [FragmentNavigatorExtras] mainly used to enable Shared Element transition

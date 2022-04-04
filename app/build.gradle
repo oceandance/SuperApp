@@ -1,5 +1,6 @@
 import kz.oceandance.buildsrc.Modules
 import kz.oceandance.buildsrc.dependencies.AndroidDependencies
+import kz.oceandance.buildsrc.dependencies.KoinDependencies
 
 apply plugin: 'com.android.application'
 apply from: '../android_commons.gradle'
@@ -34,5 +35,7 @@ dependencies {
     implementation AndroidDependencies.navigation
     implementation AndroidDependencies.navigationFrag
     implementation AndroidDependencies.navigationFeature
+
+    implementation KoinDependencies.koin
 
 }

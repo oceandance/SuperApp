@@ -4,18 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.FragmentNavigator
-import androidx.navigation.fragment.findNavController
 import kz.oceandance.common.base.BaseFragment
-import kz.oceandance.common.utils.DateHelper
-import kz.oceandance.news.R
 import kz.oceandance.news.databinding.FragmentNewsBinding
-import java.util.*
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class NewsFragment : BaseFragment() {
 
     private lateinit var binding: FragmentNewsBinding
+    private val viewModel: NewsViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,8 +25,10 @@ class NewsFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        observeNavigation(viewModel)
+
         binding.nextButton.setOnClickListener {
-            findNavController().navigate(NewsFragmentDirections.actionNewsFragmentToNewsNavGraph())
+            viewModel.navigate(NewsFragmentDirections.actionNewsFragmentToNewsNavGraph())
         }
 
     }

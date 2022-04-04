@@ -4,7 +4,8 @@ import kz.oceandance.buildsrc.versions.Versions
 
 object KoinDependencies {
 
-    const val koin = "org.koin:koin-android:${Versions.koin}"
-    const val koinViewModel = "org.koin:koin-android-viewmodel:${Versions.koin}"
+    const val koin = "io.insert-koin:koin-android:${Versions.koin}"
+    const val koinNavigation = "io.insert-koin:koin-androidx-navigation:${Versions.koin}"
+    const val koinJetpackCompose = "io.insert-koin:koin-androidx-compose:${Versions.koin}"
 
 }
