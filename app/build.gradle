@@ -27,6 +27,7 @@ android {
 dependencies {
 
     implementation project(Modules.common)
+    implementation project(Modules.featureMain)
     implementation project(Modules.featureHome)
     implementation project(Modules.featureNews)
 

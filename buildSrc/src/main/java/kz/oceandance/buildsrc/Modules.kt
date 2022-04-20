@@ -7,6 +7,7 @@ object Modules {
 
     const val common = ":common"
 
+    const val featureMain = ":features:main"
     const val featureHome = ":features:home"
     const val featureNews = ":features:news"
 }

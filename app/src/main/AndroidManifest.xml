@@ -11,9 +11,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SuperApp">
         <activity
-            android:name=".main.MainActivity"
+            android:name=".AppActivity"
             android:exported="true">
-            <nav-graph android:value="@navigation/main_navigation_graph" />
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
