@@ -5,7 +5,7 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.FragmentNavigator
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
-
+import kz.oceandance.common.base.state.ViewState
 
 abstract class BaseFragment: Fragment() {
 
@@ -14,7 +14,7 @@ abstract class BaseFragment: Fragment() {
      * Observe a [NavigationCommand] [Event] [LiveData].
      * When this [LiveData] is updated, [Fragment] will navigate to its destination
      */
-    fun observeNavigation(viewModel: BaseViewModel) {
+    fun observeNavigation(viewModel: BaseViewModel<ViewIntent, ViewAction, ViewState>) {
         viewModel.navigation.observe(viewLifecycleOwner, Observer {
             it?.getContentIfNotHandled()?.let { command ->
                 when (command) {

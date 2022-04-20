@@ -25,7 +25,7 @@ class NewsFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        observeNavigation(viewModel)
+//        observeNavigation(viewModel)
 
         binding.nextButton.setOnClickListener {
             viewModel.navigate(NewsFragmentDirections.actionNewsFragmentToNewsNavGraph())
