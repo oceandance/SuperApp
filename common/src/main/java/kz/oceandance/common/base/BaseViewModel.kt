@@ -1,3 +1,4 @@
+package kz.oceandance.common.base
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -16,10 +17,6 @@ import kz.oceandance.common.utils.EventWrapper
 abstract class BaseViewModel<INTENT : ViewIntent, ACTION : ViewAction, STATE : ViewState> :
     ViewModel(),
     IModel<STATE, INTENT> {
-
-    // FOR ERROR HANDLER
-    protected val _snackbarError = MutableLiveData<EventWrapper<Int>>()
-    val snackBarError: LiveData<EventWrapper<Int>> get() = _snackbarError
 
     // FOR NAVIGATION
     private val _navigation = MutableLiveData<EventWrapper<NavigationCommand>>()

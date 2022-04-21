@@ -2,6 +2,7 @@ package kz.oceandance.news.list
 
 import kz.oceandance.common.base.BaseViewModel
 
+
 class NewsViewModel: BaseViewModel<NewsViewIntent, NewsViewAction, NewsViewState>() {
 
     override fun intentToAction(intent: NewsViewIntent): NewsViewAction {

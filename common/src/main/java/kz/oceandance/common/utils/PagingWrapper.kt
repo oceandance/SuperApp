@@ -1,4 +1,4 @@
-package kz.oceandance.common
+package kz.oceandance.common.utils
 
 
 data class PagingWrapper<T>(
