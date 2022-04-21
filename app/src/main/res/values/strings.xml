@@ -2,4 +2,8 @@
     <string name="app_name">SuperApp</string>
     <string name="title_core">core</string>
     <string name="title_common">common</string>
+
+    <string name="home_title">Home</string>
+    <string name="news_title">News</string>
+
 </resources>

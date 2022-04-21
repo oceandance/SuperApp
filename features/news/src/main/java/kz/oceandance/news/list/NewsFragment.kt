@@ -4,7 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import kz.oceandance.common.base.BaseFragment
+import kz.oceandance.common.base.NavigationCommand
+import kz.oceandance.common.utils.EventWrapper
 import kz.oceandance.news.databinding.FragmentNewsBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -25,11 +28,20 @@ class NewsFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        observeNavigation(viewModel)
+        viewModel.navigation.observe(viewLifecycleOwner, ::handleNavigation)
 
         binding.nextButton.setOnClickListener {
             viewModel.navigate(NewsFragmentDirections.actionNewsFragmentToNewsNavGraph())
         }
 
+    }
+
+    private fun handleNavigation(eventWrapper: EventWrapper<NavigationCommand>?) {
+        eventWrapper?.getContentIfNotHandled()?.let { command ->
+            when (command) {
+                is NavigationCommand.To -> findNavController().navigate(command.directions, getExtras())
+                is NavigationCommand.Back -> findNavController().navigateUp()
+            }
+        }
     }
 }

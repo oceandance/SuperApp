@@ -25,5 +25,4 @@ android {
 dependencies {
     implementation(project(kz.oceandance.buildsrc.Modules.featureHome))
     implementation(project(kz.oceandance.buildsrc.Modules.featureNews))
-
 }
